@@ -4,7 +4,6 @@ from django.urls import reverse
 
 
 class Customer(AbstractUser):
-    date_of_birth = models.DateField()
 
     class Meta:
         ordering = ["username"]
@@ -41,13 +40,15 @@ class Order(models.Model):
     number_of_order = models.IntegerField(unique=True)
     order_creation_date = models.DateTimeField(auto_now_add=True)
     pizzas = models.ManyToManyField(Pizza, related_name="orders")
-    customer = models.ManyToManyField(Customer, related_name="orders")
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="orders")
 
     class Meta:
         ordering = ["-order_creation_date"]
+
+    class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=["customer", "number_of_order"],
-                name="unique order"
+                fields=["number_of_order", "customer"],
+                name="unique order",
             )
         ]
