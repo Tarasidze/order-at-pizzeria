@@ -142,7 +142,7 @@ class PrivateIngredientsTest(TestCase):
         )
         # super().setUp()
 
-    def test_retrieve_pizza_list(self):
+    def test_retrieve_ingredients_list(self):
         result = self.client.get(INGREDIENT_LIST)
         ingredients = Ingredients.objects.all()
 
@@ -153,27 +153,23 @@ class PrivateIngredientsTest(TestCase):
         )
         self.assertTemplateUsed(result, "order/ingredients_list.html")
 
-    def test_customer_search_view(self):
-        pizzas = Pizza.objects.all()
+    def test_ingredients_search_view(self):
+        ingredients = Ingredients.objects.all()
         result_one = self.client.get(
-            f"{PIZZA_URL}?name=roma"
+            f"{INGREDIENT_LIST}?name=salo"
         )
         self.assertIn(
-            self.pizza_roma,
-            list(result_one.context["pizza_list"])
+            self.salo,
+            list(result_one.context["ingredients_list"])
         )
         self.assertNotIn(
-            self.pizza_winter,
-            list(result_one.context["pizza_list"])
+            self.tomato,
+            list(result_one.context["ingredients_list"])
         )
         result_two = self.client.get(
-            f"{PIZZA_URL}?username="
+            f"{INGREDIENT_LIST}?name="
         )
         self.assertEquals(
-            list(pizzas),
-            list(result_two.context["pizza_list"])
+            list(ingredients),
+            list(result_two.context["ingredients_list"])
         )
-
-
-
-
