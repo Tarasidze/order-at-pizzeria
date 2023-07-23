@@ -50,6 +50,7 @@ class ModelTest(TestCase):
             price="190"
 
         )
+
         self.assertEquals(
             str(pizza),
             f"Name: {pizza.name}, size: {pizza.size}, prise: {pizza.price}"
