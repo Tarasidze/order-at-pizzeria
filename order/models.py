@@ -18,6 +18,9 @@ class Customer(AbstractUser):
 class Ingredients(models.Model):
     ingredient = models.CharField(max_length=63, unique=True)
 
+    class Meta:
+        ordering = ["ingredient"]
+
     def __str__(self):
         return self.ingredient
 
