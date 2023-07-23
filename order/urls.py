@@ -20,7 +20,6 @@ from .views import (
     PizzaUpdateView,
     OrderDeleteView,
     UpdateOrderStatusView,
-
 )
 
 urlpatterns = [
