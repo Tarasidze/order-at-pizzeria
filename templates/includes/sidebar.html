@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" href="/static/css/side-bar.css">
+
+
+<div class="sidebar">
+  {% if user.is_authenticated %}
+    <div class="user-status">
+      {% if user.is_superuser %}
+      {% else %}
+        <p class="inline customer">(customer)</p>
+      {% endif %}
+      <p class="username"><a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></p>
+      <p class="logout"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></p>
+    </div>
+  {% else %}
+    <p class="inline guest">(guest)</p>
+    <p class="login"><a href="{% url 'login'%}?next={{request.path}}">Login</a></p>
+  {% endif %}
+
+  <ul class="sidebar-nav list-group">
+    <li class="list-group-item"><a href="{% url 'order:index' %}">Home</a></li>
+    {% if user.is_superuser %}
+      <li class="list-group-item"><a href="{% url 'order:customer-list' %}">All customers</a></li>
+      <li class="list-group-item"><a href="{% url 'order:order-list' %}">All orders</a></li>
+    {% endif %}
+    <li class="list-group-item"><a href="{% url 'order:pizza-list' %}">Pizzas</a></li>
+    <li class="list-group-item"><a href="{% url 'order:ingredients-list' %}">Ingredients</a></li>
+  </ul>
+</div>
