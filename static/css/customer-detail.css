@@ -1,0 +1,25 @@
+.order {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.order h4 {
+  margin-bottom: 10px;
+}
+
+.order-details {
+  margin-left: 20px;
+}
+
+.order-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.order-list li {
+  margin-bottom: 5px;
+}

@@ -1,39 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>
-    Username: {{ customer.username }}
-    <a href="{% url 'order:customer-delete' pk=customer.id %}" class="btn btn-danger link-to-page">
-      Delete
-    </a>
+   <link rel="stylesheet" href="/static/css/customer-detail.css">
+  <div class="container">
+    <div class="header">
+      <h1 class="username">Username: {{ customer.username }}</h1>
+      <div class="action-buttons">
+        <a href="{% url 'order:customer-delete' pk=customer.id %}" class="btn btn-warning">Delete</a>
+        <a href="{% url 'order:customer-update' pk=customer.id %}" class="btn btn-outline-secondary">Update customer</a>
+      </div>
+    </div>
 
-    <a href="{% url 'order:customer-update' pk=customer.id %}" class="btn btn-secondary link-to-page">
-      Update customer
-    </a>
-  </h1>
+    <table class="order-table">
+      <tr>
+        <th>Field</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td><strong>Username:</strong></td>
+        <td>{{ customer.username }}</td>
+      </tr>
+      <tr>
+        <td><strong>First name:</strong></td>
+        <td>{{ customer.first_name }}</td>
+      </tr>
+    </table>
 
-  <p><strong>Username:</strong> {{ customer.username }}</p>
-  <p><strong>First name:</strong> {{ customer.first_name }}</p>
-
-  <div class="ml-3">
-    <h4>Orders: </h4>
-            {% for order in customer.orders.all %}
-            <tr>
-                <td>{{ order.id }}</td>
-                <td>
-                    <ul>
-                        {% for pizza in order.pizzas.all %}
-                            <li>{{ pizza.name }}</li>
-                        {% endfor %}
-                    </ul>
-                </td>
-            </tr>
-              {% empty %}
-                      <p>No orders</p>
-            {% endfor %}
-
-
-
-
+    <div class="orders">
+      <h4>Orders:</h4>
+      {% if customer.orders.count > 0 %}
+        {% for order in customer.orders.all %}
+          <div class="order">
+            <h4>Order ID: {{ order.id }}</h4>
+            <div class="order-details">
+              <ul class="order-list">
+                {% for pizza in order.pizzas.all %}
+                  <li>{{ pizza.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No orders</p>
+      {% endif %}
+    </div>
   </div>
 {% endblock %}
