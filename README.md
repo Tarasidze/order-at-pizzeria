@@ -18,7 +18,7 @@ My ever first, more or less big for me, pet project. It provides you opportunity
 ## Application functional
 * [Install project](#setup)
 * Login/Register
-* View, create, delete ingredients for each pizza
+* View, create, delete ingredients
 * View, create, delete pizzas
 * Manage orders
 * Manage customers
@@ -28,6 +28,7 @@ My ever first, more or less big for me, pet project. It provides you opportunity
 * hide all unnecessary field from online customers
 * customize pizza_detail.html
 * remove edit bottom from completed orders
+* rewrite front-end part of the project
 ​
 ## Technologies
 ​
