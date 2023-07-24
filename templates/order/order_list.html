@@ -28,7 +28,7 @@
         {% if not order.completed_order %}
           <div class="order-plate">
             <div class="order-header">
-              <stro><span class="order-id">Order ID: {{ order.id }}</span></stro>
+              <strong><span class="order-id">Order ID: {{ order.id }}</span></strong>
               <div class="order-actions">
                 <a href="{% url 'order:order-update' order.id %}" class="btn btn-sm btn-info">Edit</a>
                 <a href="{% url 'order:order-delete' order.id %}" class="btn btn-sm btn-danger">Delete</a>
