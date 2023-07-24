@@ -3,7 +3,19 @@ ul {
   padding: 0;
 }
 
+.tiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tiles-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .tile {
+  flex: 0 0 calc(33.333% - 20px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,4 +58,15 @@ ul {
 
 .btn-outline-secondary:hover {
   background-color: #f0f0f0;
+}
+
+/* Additional CSS for JavaScript hover effect */
+.tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.delete-btn {
+  margin-top: 10px;
 }

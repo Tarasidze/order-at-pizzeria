@@ -2,7 +2,7 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <link rel="stylesheet" href="/static/css/list-tile.css">
+  <link rel="stylesheet" href="/static/css/pizza-list.css">
   <h1>
     Pizzas list
     <a href="{% url 'order:pizza-create' %}" class="btn btn-primary link-to-page">
@@ -17,17 +17,19 @@
 
   <div class="tiles-container">
     {% if pizza_list %}
-      {% for pizza in pizza_list %}
-        <div class="tile">
-          <a href="{% url "order:pizza-detail" pk=pizza.id %}">
-            <h3>{{ pizza.name }}</h3>
-            <p>price: {{ pizza.price }}</p>
-          </a>
-          <a class="btn btn-outline-secondary" style="color: red;" href="{% url 'order:pizza-delete' pk=pizza.id %}">
-            Delete
-          </a>
-        </div>
-      {% endfor %}
+      <div class="tiles-wrapper">
+        {% for pizza in pizza_list %}
+          <div class="tile">
+            <a href="{% url "order:pizza-detail" pk=pizza.id %}">
+              <h3>{{ pizza.name }}</h3>
+              <p>price: {{ pizza.price }}</p>
+            </a>
+            <a class="btn btn-warning delete-btn" href="{% url 'order:pizza-delete' pk=pizza.id %}">
+              Delete
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     {% else %}
       <p>There are no pizza :(</p>
     {% endif %}
