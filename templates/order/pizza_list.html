@@ -21,7 +21,7 @@
         <div class="tile">
           <a href="{% url "order:pizza-detail" pk=pizza.id %}">
             <h3>{{ pizza.name }}</h3>
-            <p>{{ pizza.price }}</p>
+            <p>price: {{ pizza.price }}</p>
           </a>
           <a class="btn btn-outline-secondary" style="color: red;" href="{% url 'order:pizza-delete' pk=pizza.id %}">
             Delete
