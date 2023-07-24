@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/order.css">
+
+<div class="order-list-container">
+  <h1 class="order-list-heading">
+    Order List
+    <a href="{% url 'order:order-create' %}" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
+
+  <form action="" method="get" class="form-inline order-search-form">
+    {{ search_form|crispy }}
+    <button type="submit" class="btn btn-outline-secondary">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </form>
+
+  {% if order_list %}
+  <div class="order-plates-container">
+    <div class="order-column">
+      <h2 class="order-column-heading">Orders In Progress</h2>
+      {% for order in order_list %}
+        {% if not order.completed_order %}
+          <div class="order-plate">
+            <div class="order-header">
+              <strong><span class="order-id">Order ID: {{ order.id }}</span></strong>
+              <div class="order-actions">
+                <a href="{% url 'order:order-update' order.id %}" class="btn btn-sm btn-info">Edit</a>
+                <a href="{% url 'order:order-delete' order.id %}" class="btn btn-sm btn-danger">Delete</a>
+
+              </div>
+            </div>
+            <p class="order-date">Order Creation Date: {{ order.order_creation_date }}</p>
+            <p class="order-customer">Customer: {{ order.customer }}</p>
+            <ul class="order-pizzas">
+              {% for pizza in order.pizzas.all %}
+                <li>({{ pizza.name }})</li>
+              {% endfor %}
+            </ul>
+            <div>
+                {% if not order.completed_order %}
+                <strong>order in progress</strong>
+                <a href="{% url 'order:update_order_status' order.id %}" class="btn btn-sm btn-success">Mark as Completed</a>
+                {% else %}
+                <strong>completed order</strong>
+                {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="order-column">
+      <h2 class="order-column-heading">Completed Orders</h2>
+      {% for order in order_list %}
+        {% if order.completed_order %}
+          <div class="order-plate">
+            <div class="order-header">
+              <stro><span class="order-id">Order ID: {{ order.id }}</span></stro>
+              <div class="order-actions">
+                <a href="{% url 'order:order-update' order.id %}" class="btn btn-sm btn-info">Edit</a>
+                <a href="{% url 'order:order-delete' order.id %}" class="btn btn-sm btn-danger">Delete</a>
+              </div>
+            </div>
+            <p class="order-date">Order Creation Date: {{ order.order_creation_date }}</p>
+            <p class="order-customer">Customer: {{ order.customer }}</p>
+            <ul class="order-pizzas">
+              {% for pizza in order.pizzas.all %}
+                <li>({{ pizza.name }})</li>
+              {% endfor %}
+            </ul>
+            <div>
+              <strong>completed order</strong>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <p class="no-orders-message">There are no orders :(</p>
+  {% endif %}
+</div>
+
+{% endblock %}

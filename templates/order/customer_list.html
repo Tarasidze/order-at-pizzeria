@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="/static/css/customer-list.css">
+  <h1>
+    Customer list
+    <a href="{% url 'order:customer-create' %}" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
+
+  <form action="" method="get" class="form-inline">
+    {{ search_form|crispy }}
+    <input class="btn btn-outline-secondary" type="submit" value="🔎">
+  </form>
+  <br>
+
+  {% if customer_list %}
+    <ul>
+      {% for customer in customer_list %}
+        <li>
+          <a href="{% url 'order:customer-detail' pk=customer.id %}">{{ customer.id }}
+          {{ customer.username }} ({{ customer.first_name }})
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no customers :(</p>
+  {% endif %}
+{% endblock %}
