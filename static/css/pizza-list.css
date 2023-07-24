@@ -54,6 +54,7 @@ ul {
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
+
 }
 
 .btn-outline-secondary:hover {
@@ -64,6 +65,7 @@ ul {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+
 }
 
 .delete-btn {

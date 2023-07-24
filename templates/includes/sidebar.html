@@ -1,9 +1,7 @@
 {% load static %}
-{% load static %}
-
-<link rel="stylesheet" href="{% static 'css/side-bar.css' %}">
 
 <div class="sidebar">
+<link rel="stylesheet" href="{% static 'css/side-bar.css' %}">
   {% if user.is_authenticated %}
     <div class="user-status">
       {% if user.is_superuser %}
