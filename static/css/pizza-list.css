@@ -60,7 +60,6 @@ ul {
   background-color: #f0f0f0;
 }
 
-/* Additional CSS for JavaScript hover effect */
 .tile:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
