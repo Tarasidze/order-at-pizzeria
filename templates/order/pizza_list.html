@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
+{% load static %}
 
 {% block content %}
-  <link rel="stylesheet" href="/static/css/pizza-list.css">
+  <link rel="stylesheet" href="{% static 'css/pizza-list.css' %}">
   <h1>
     Pizzas list
     <a href="{% url 'order:pizza-create' %}" class="btn btn-primary link-to-page">

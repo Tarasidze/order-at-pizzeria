@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
+{% load static %}
 
 
 {% block content %}
-<link rel="stylesheet" href="/static/css/order.css">
+<link rel="stylesheet" href=" {% static 'css/order.css' %} ">
 
 <div class="order-list-container">
   <h1 class="order-list-heading">

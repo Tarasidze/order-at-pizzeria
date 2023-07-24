@@ -22,14 +22,14 @@ a {
 }
 
 .btn {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid #007bff;
-  border-radius: 4px;
-  color: #fff;
-  background-color: #007bff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  display: inline-block !important;
+  padding: 8px 16px !important;
+  border: 1px solid #007bff !important;
+  border-radius: 4px !important;
+  color: #fff !important;
+  background-color: #007bff !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
 }
 
 .btn:hover {
@@ -37,7 +37,7 @@ a {
 }
 
 .btn-outline-secondary {
-  background-color: transparent;
+  background-color: transparent !important;
   color: #007bff;
 }
 
@@ -54,11 +54,11 @@ a {
 input[type="submit"] {
   background-color: #007bff;
   color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 6px 10px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
 }
 
 input[type="submit"]:hover {
