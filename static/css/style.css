@@ -8,11 +8,11 @@ html, body {
 }
 
 .center-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100vh !important;
+  margin: 0 ;
   padding: 20px;
 }
 
