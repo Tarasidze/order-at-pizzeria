@@ -8,11 +8,14 @@ html, body {
 }
 
 .center-container {
-  display: flex !important;
+  left: 15%;
+  right: 15%;
+  position: absolute;
+  margin: -25px 0 0 -25px;
+  /*display: block !important;*/
   justify-content: center !important;
   align-items: center !important;
-  height: 100vh !important;
-  margin: 0 ;
+  /*height: 100vh !important;*/
   padding: 20px;
 }
 
