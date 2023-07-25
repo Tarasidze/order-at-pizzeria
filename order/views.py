@@ -35,7 +35,6 @@ def index(request):
         "num_orders": num_orders,
         "num_visits": num_visits + 1,
     }
-    print(request.GET.get(1))
 
     return render(request, "order/index.html", context=context)
 
@@ -83,9 +82,6 @@ class CustomerUpdateView(LoginRequiredMixin, generic.UpdateView):
 class CustomerDetailView(LoginRequiredMixin, generic.DetailView):
     model = Customer
     queryset = Customer.objects.all()
-    # user = get_user_object()
-    # print("____++++++", queryset)
-    # print("____++++++", Customer.objects.all())
 
 
 class CustomerDeleteView(LoginRequiredMixin, generic.DeleteView):
