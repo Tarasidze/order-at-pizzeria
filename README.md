@@ -1,4 +1,6 @@
 # Pizzeria ordering Assistant
+## Link
+[Table ordering](https://order-table-u5bq.onrender.com)
 ​
 ## Content:
 ​
@@ -53,16 +55,17 @@ python -m venv venv
 ```
 Then
 ```
-venv\Scripts\activate.bat
+# On Windows
+venv\Scripts\activate
+
+# On macOS or Linux
+source venv/bin/activate
 ```
 3. Install Django and requirements:
 ```
 pip install -r requirements.txt
 ```
 4. Create DataBase by running:
-```
-python manage.py makemigrations
-```
 ```
 python manage.py migrate
 ```
@@ -81,7 +84,6 @@ ctrl + c
 ## Accessing the Application
 ​
 * The Django application is accessible at `http://127.0.0.1:8000/`
-* The Admin page can be accessed at `http://127.0.0.1:8000/admin`
 * Create admin User ```python manage.py createsuperuser```
 ## Demo
 ![Website Interface](demo1.png)
