@@ -16,7 +16,7 @@
 My ever first, more or less big for me, pet project. It provides you opportunity to manage orders in small pizzeria.
 ​
 ## Application functional
-* [Install project](#setup)
+* Install project
 * Login/Register
 * View, create, delete ingredients
 * View, create, delete pizzas
