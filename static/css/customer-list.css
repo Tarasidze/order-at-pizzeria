@@ -1,3 +1,8 @@
+body, h1, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
@@ -75,4 +80,44 @@ ul li a {
 
 ul li a:hover {
   background-color: #ddd;
+}
+
+/* New styles for improved design */
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+/* Search form styles */
+.form-inline {
+  margin-top: 20px;
+}
+
+.form-inline .form-control {
+  margin-right: 10px;
+}
+
+/* Customer list styles */
+ul.customer-list {
+  margin-top: 20px;
+}
+
+ul.customer-list li {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+ul.customer-list li:hover {
+  background-color: #e0e0e0;
 }
