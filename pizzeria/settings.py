@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 import decouple
+import dotenv
 from dotenv import load_dotenv
 import dj_database_url
 
@@ -9,11 +10,13 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-SECRET_KEY = decouple.config("SECRET_KEY", default="VerySecretKey", cast=str)
+SECRET_KEY = decouple.config("SECRET_KEY", default="passwordQWERTY", cast=str)
 
 DEBUG = decouple.config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "order-table-u5bq.onrender.com"]
+
+INTERNAL_IPS = ["127.0.0.1"]
 
 
 INSTALLED_APPS = [
@@ -72,7 +75,6 @@ DATABASES = {
     }
 }
 
-# dj-database-url
 db_from_env = dj_database_url.config(
     default=decouple.config("DATABASE_URL"),
     conn_max_age=500
@@ -99,7 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTH_USER_MODEL = "order.Customer"
 
 LOGIN_REDIRECT_URL = "/"
-
 
 LANGUAGE_CODE = 'en-us'
 
