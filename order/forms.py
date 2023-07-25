@@ -51,7 +51,7 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = Order
-        fields = ['pizzas']  # Exclude 'customer' and 'order_number' fields
+        fields = ['pizzas']
 
 
 class IngredientsForm(forms.ModelForm):

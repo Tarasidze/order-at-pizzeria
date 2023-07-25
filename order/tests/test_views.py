@@ -140,7 +140,6 @@ class PrivateIngredientsTest(TestCase):
         self.tomato = Ingredients.objects.create(
             ingredient="tomato"
         )
-        # super().setUp()
 
     def test_retrieve_ingredients_list(self):
         result = self.client.get(INGREDIENT_LIST)

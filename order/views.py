@@ -83,9 +83,6 @@ class CustomerUpdateView(LoginRequiredMixin, generic.UpdateView):
 class CustomerDetailView(LoginRequiredMixin, generic.DetailView):
     model = Customer
     queryset = Customer.objects.all()
-    # user = get_user_object()
-    # print("____++++++", queryset)
-    # print("____++++++", Customer.objects.all())
 
 
 class CustomerDeleteView(LoginRequiredMixin, generic.DeleteView):
