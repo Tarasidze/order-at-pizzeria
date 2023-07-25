@@ -21,15 +21,15 @@
 }
 
 .admin {
-  color: #FF5733;
+  color: #FF5733; /* Custom color for admin */
 }
 
 .customer {
-  color: #33B5FF;
+  color: #33B5FF; /* Custom color for customer */
 }
 
 .guest {
-  color: #aaa;
+  color: #aaa; /* Custom color for guest */
 }
 
 .username a {
@@ -40,7 +40,7 @@
 }
 
 .logout a {
-  color: #FF5733;
+  color: #FF5733; /* Custom color for logout link */
 }
 
 .sidebar-nav {
@@ -49,19 +49,19 @@
   margin: 0;
 }
 
-/*.list-group-item {*/
-/*  border: none;*/
-/*  background-color: transparent;*/
-/*  padding: 5px 0;*/
-/*}*/
+.list-group-item {
+  border: none;
+  background-color: transparent;
+  padding: 5px 0;
+}
 
-/*.list-group-item a {*/
-/*  color: #333;*/
-/*  text-decoration: none;*/
-/*  font-size: 16px ;*/
-/*  transition: color 0.2s ;*/
-/*}*/
+.list-group-item a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s;
+}
 
 .list-group-item a:hover {
-  color: #FF5733;
+  color: #FF5733; /* Custom color for link hover */
 }
