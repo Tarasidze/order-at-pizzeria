@@ -1,38 +1,42 @@
 {% extends "base.html" %}
-{%  load static %}
-
-{% block head %}
-
-
-{% endblock %}
 
 {% block login %}
-<link rel="stylesheet" href="{%  static 'css/style.css' %}">
-<script src="/static/js/login.js"></script>
-<div class="center-container">
 
-  <div class="login-form-container tile">
-    {% if form.errors %}
-      <p class="error-msg">Your username and password didn't match. Please try again.</p>
-    {% endif %}
-    <h1>Ordering Assistant</h1>
-    <h2 class="center-container">Login</h2>
+<div class="container">
 
-    {% if next %}
-      <p>This is the small pet page.</p>
-       <p> Use next credentials:</p>
-       <p>admin: &emsp; <strong>admin</strong></p>
-       <p>pass:  &emsp; <strong>taras@123</strong></p>
-    {% endif %}
+    <div class="d-flex justify-content-md-center mt-lg-5">
+      <div class="login-form-container p-4 shadow-lg">
+          {% if form.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+          {% endif %}
+          <h1 class="text-lg-center">Ordering Assistant</h1>
+          <h2 class="text-sm-center">Login</h2>
 
-    <form method="post" action="{% url 'login' %}" class="login-form">
-      {% csrf_token %}
-      {{ form.as_p }}
+          <p>
+          <strong><a href="https://github.com/Tarasidze/order-at-pizzeria/tree/main">Link to source code on GitHub</a></strong>
+          </p>
 
-      <input type="submit" value="Login" class="btn btn-primary" />
-      <input type="hidden" name="next" value="{{ next }}" />
-    </form>
+          <form method="post" action="{% url 'login' %}" class="login-form">
+          {% csrf_token %}
+          {{ form.as_p }}
+
+          <input type="submit" value="Login" class="btn btn-primary shadow-lg" />
+          <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+      </div>
+    </div>
   </div>
 
-</div>
+<style>
+  .login-form-container {
+    border: 2px solid #ccc;
+    border-radius: 16px;
+  }
+
+  .login-form-container:hover {
+    transform: scale(1.015);
+    transition: transform 0.4s ease-in-out;
+  }
+</style>
+
 {% endblock %}
