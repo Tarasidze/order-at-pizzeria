@@ -1,8 +1,11 @@
 # Pizzeria ordering Assistant
 ## Link
-Use next credentials: 
+```
+Use next credentials:
+ 
 admin: admin
 pass: taras@123
+```
 [Table ordering](https://order-table-u5bq.onrender.com)
 ​
 ## Content:
