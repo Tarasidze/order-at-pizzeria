@@ -36,7 +36,7 @@ My ever first, more or less big for me, pet project. It provides you opportunity
 * add possibility online buying
 * hide all unnecessary field from online customers
 * customize pizza_detail.html
-* remove edit bottom from completed orders
+* remove edit button from completed orders
 * rewrite front-end part of the project
 ​
 ## Technologies
