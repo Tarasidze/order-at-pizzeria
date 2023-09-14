@@ -1,29 +1,35 @@
 {% extends "base.html" %}
-{% load static %}
-
 {% block content %}
-  <link rel="stylesheet" href=" {% static 'css/index.css' %} ">
 
-  <div class="container">
-    <h1 class="main-title">Welcome to Pizzeria</h1>
-    <p class="welcome-message">Welcome <strong>{{ user.get_username }}</strong></p>
+<div class="container">
+  <h1 class="main-title text-center">Welcome to Pizzeria</h1>
+  <p class="welcome-message text-center">Welcome <strong>{{ user.get_username }}</strong></p>
 
-    <div class="dynamic-content">
-      <ul class="info-list">
-        <li class="info-item">
-          <span class="info-label">Assortment:</span>
-          <span class="info-value">{{ num_pizzas }}</span>
-        </li>
-        <li class="info-item">
-          <span class="info-label">Customers:</span>
-          <span class="info-value">{{ num_clients }}</span>
-        </li>
-        <li class="info-item">
-          <span class="info-label">Orders:</span>
-          <span class="info-value">{{ num_orders }}</span>
-        </li>
-      </ul>
-      <p class="visit-message">You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="dynamic-content bg-white rounded p-3 mt-4 shadow">
+        <ul class="info-list list-unstyled">
+          <li class="info-item mb-2">
+            <span class="info-label font-weight-bold">Assortment:</span>
+            <span class="info-value">{{ num_pizzas }}</span>
+          </li>
+          <li class="info-item mb-2">
+            <span class="info-label font-weight-bold">Customers:</span>
+            <span class="info-value">{{ num_clients }}</span>
+          </li>
+          <li class="info-item mb-2">
+            <span class="info-label font-weight-bold">Orders:</span>
+            <span class="info-value">{{ num_orders }}</span>
+          </li>
+        </ul>
+        <p class="visit-message text-center text-muted mt-2">
+          You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.
+        </p>
+      </div>
     </div>
   </div>
+</div>
+
+</div>
 {% endblock %}
